@@ -25,7 +25,7 @@ content of another language.
 A search source of an extension takes part as soon as it implements
 `PublishedSource::published()` and returns a `PublishedEntry` with the
 target of each item, e.g. `acme/shop/product:01J…`. The target needs an
-address, usually from `$registry->subpages()`.
+address, usually from `$registry->plugin()`.
 
 ## Query
 
