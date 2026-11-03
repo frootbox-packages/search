@@ -1,0 +1,11 @@
+# Arabic texts of the search for visitors (decisions 0161, 0228).
+"Find": "ابحث"
+"Search the website": "البحث في الموقع"
+"Nothing found for \"{q}\".": "لم يتم العثور على نتائج لـ «{q}»."
+"One hit for \"{q}\".": "نتيجة واحدة لـ «{q}»."
+"{count} hits for \"{q}\".": "{count} نتائج لـ «{q}»."
+"Try another word or fewer words.": "جرّب كلمة أخرى أو كلمات أقل."
+"Previous page": "الصفحة السابقة"
+"Next page": "الصفحة التالية"
+"Page {page} of {pages}": "الصفحة {page} من {pages}"
+"Pages": "الصفحات"

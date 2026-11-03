@@ -1,0 +1,54 @@
+{# frootbox
+title: Site search
+description: A field to search the website, and below it the pages, articles, events and more that contain the words, best first. Usually on a page of its own, which the head of the theme links to.
+group: form
+keywords: [Search, Find, Site search, Full text]
+query: [q, page]
+options:
+  perPage: { type: number, label: Hits per page, default: 10, min: 1, max: 50 }
+fields:
+  title: { type: headline, label: Heading, optional: true, maxLength: 100, placeholder: "Site search" }
+#}
+{% set field = 'search-' ~ id %}
+<div class="search">
+  {{ heading('title', 0, {class: 'search__title'}) }}
+  <form class="search__form" role="search" action="{{ action }}" method="get">
+    <label class="search__label" for="{{ field }}">{{ t('Search the website') }}</label>
+    <div class="search__row">
+      <input class="search__input" id="{{ field }}" type="search" name="q" value="{{ q }}" maxlength="100" enterkeyhint="search">
+      <button class="search__button" type="submit">{{ t('Find') }}</button>
+    </div>
+  </form>
+  {% if searched %}
+    <p class="search__status" role="status">
+      {%- if total == 0 -%}
+        {{ t('Nothing found for "{q}".', {q: q}) }}
+      {%- elseif total == 1 -%}
+        {{ t('One hit for "{q}".', {q: q}) }}
+      {%- else -%}
+        {{ t('{count} hits for "{q}".', {count: total, q: q}) }}
+      {%- endif -%}
+    </p>
+    {% if hits %}
+      <ol class="search__hits">
+        {% for hit in hits %}
+          <li class="search-hit">
+            {{ heading_text(hit.title, 1, {class: 'search-hit__title'}, hit.url) }}
+            {% if hit.excerpt %}
+              <p class="search-hit__text">{% for part in hit.excerpt %}{% if part.mark %}<mark>{{ part.text }}</mark>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% else %}
+      <p class="search__hint">{{ t('Try another word or fewer words.') }}</p>
+    {% endif %}
+    {% if pagination %}
+      <nav class="search__pages" aria-label="{{ t('Pages') }}">
+        {% if pagination.previous %}<a class="search__page" href="{{ pagination.previous }}" rel="prev">{{ t('Previous page') }}</a>{% endif %}
+        <span class="search__position">{{ t('Page {page} of {pages}', {page: pagination.page, pages: pagination.pages}) }}</span>
+        {% if pagination.next %}<a class="search__page" href="{{ pagination.next }}" rel="next">{{ t('Next page') }}</a>{% endif %}
+      </nav>
+    {% endif %}
+  {% endif %}
+</div>

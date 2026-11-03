@@ -1,0 +1,16 @@
+# German texts of the search: labels of the block and texts for visitors (decisions 0161, 0228).
+"Site search": "Suche"
+"Find": "Suchen"
+"A field to search the website, and below it the pages, articles, events and more that contain the words, best first. Usually on a page of its own, which the head of the theme links to.": "Ein Feld, um die Website zu durchsuchen, und darunter die Seiten, Artikel, Termine und mehr mit den gesuchten Wörtern, die besten zuerst. Meist auf einer eigenen Seite, auf die der Kopf des Themes verlinkt."
+"Hits per page": "Treffer pro Seite"
+"Heading": "Überschrift"
+# Website
+"Search the website": "Website durchsuchen"
+"Nothing found for \"{q}\".": "Zu „{q}“ wurde nichts gefunden."
+"One hit for \"{q}\".": "Ein Treffer zu „{q}“."
+"{count} hits for \"{q}\".": "{count} Treffer zu „{q}“."
+"Try another word or fewer words.": "Versuch es mit einem anderen Wort oder mit weniger Wörtern."
+"Previous page": "Vorige Seite"
+"Next page": "Nächste Seite"
+"Page {page} of {pages}": "Seite {page} von {pages}"
+"Pages": "Seiten"

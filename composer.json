@@ -1,0 +1,33 @@
+{
+    "name": "frootbox/search",
+    "description": "Search for the Frootbox CMS: visitors find published pages, articles, events and more",
+    "type": "frootbox-extension",
+    "license": "MIT",
+    "keywords": [
+        "cms",
+        "frootbox",
+        "search",
+        "site-search"
+    ],
+    "require": {
+        "php": ">=8.5",
+        "frootbox/core": "^0.1",
+        "frootbox/database": "^0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Frootbox\\Search\\": "src/",
+            "Frootbox\\Search\\Migrations\\": "migrations/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Frootbox\\Search\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    }
+}

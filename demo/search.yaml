@@ -1,0 +1,33 @@
+# The search page in German and English, for a website of the base theme
+# or a child theme with a start page, e.g. after the demo of Bohnenglück:
+#
+#     php bin/frootbox seed frootbox/search:demo/search.yaml
+#
+# The head of the base theme links to it on every page; it stays out of
+# the navigations.
+
+- page.tree: {}
+  as: tree
+
+- page.create:
+    layout: frootbox/theme-base/Page
+    parentId: '${tree.0.id}'
+    translations:
+      de:
+        title: Suche
+        content:
+          fields:
+            title: Suche
+          areas:
+            main:
+              - block: frootbox/search/Search
+      en:
+        title: Search
+        content:
+          fields:
+            title: Search
+          areas:
+            main:
+              - block: frootbox/search/Search
+  as: page
+- page.publish: { ids: ['${page.id}'] }
