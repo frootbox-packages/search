@@ -32,3 +32,9 @@ address, usually from `$registry->plugin()`.
 `frootbox/search/website.find` with `q`, `language`, `limit` and
 `offset`, open to anyone, also over the REST API:
 `GET /api/v1/frootbox/search/website.find?q=coffee`.
+
+## Source and issues
+
+This package is developed in the [Frootbox monorepo](https://github.com/Frootbox/frootbox)
+and mirrored here read-only. Questions, bugs and ideas go there, see the
+[documentation](https://github.com/Frootbox/frootbox/tree/main/documentation).
