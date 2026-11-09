@@ -130,6 +130,8 @@ final readonly class FindOnWebsite implements Query
     {
         return null !== $outline->get($page)
             && null === $outline->lockedBy($page)
-            && null === $outline->excludedFromSiteSearchBy($page);
+            && null === $outline->excludedFromSiteSearchBy($page)
+            // Nothing of a page with a password in the results (decision 0358).
+            && null === $outline->protectedBy($page);
     }
 }
